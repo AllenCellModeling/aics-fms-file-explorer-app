@@ -98,4 +98,16 @@ export default class FileDetail {
     public get thumbnail() {
         return this.fileDetail.thumbnail;
     }
+
+    public get annotations() {
+        return this.fileDetail.annotations;
+    }
+
+    public get uploaded() {
+        return new Date(this.fileDetail.uploaded);
+    }
+
+    public get uploadedBy() {
+        return this.fileDetail.uploadedBy;
+    }
 }

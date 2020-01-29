@@ -3,6 +3,7 @@ import * as React from "react";
 import { useSelector } from "react-redux";
 
 import FileThumbnail from "../../components/FileThumbnail";
+import SingleFileDetails from "../../components/SingleFileDetails";
 import WindowActionButton from "../../components/WindowActionButton";
 import { selection } from "../../state";
 import useFileDetails from "./useFileDetails";
@@ -77,7 +78,11 @@ export default function FileDetails(props: FileDetails) {
                             <FileThumbnail uri={fileDetails.thumbnail} />
                         )}
                     </div>
-                    {isLoading ? "Loading..." : JSON.stringify(fileDetails, undefined, 4)}
+                    {!fileDetails ? (
+                        "Loading..."
+                    ) : (
+                        <SingleFileDetails filename="TODO-get-filename" details={fileDetails} />
+                    )}
                 </div>
             </div>
         </div>
